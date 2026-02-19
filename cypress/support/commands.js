@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('createCategory', () => {
+  return cy.request('POST', baseUrl, {
+    name: "Test Category",
+    image: "https://placeimg.com/640/480/any"
+  })
+})
